@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_postgres_addresses
+    description: "Addresses of users"
+  
+  - name: stg_postgres_events
+    description: "Every event triggered within sessions"
+  
+  - name: stg_postgres_order_items
+    description: "Items contained within each order"
+
+  - name: stg_postgres_orders
+    description: "Every order created"
+  
+  - name: stg_postgres_products
+    description: "Products available and their specificities (price, amount in inventory)"
+
+  - name: stg_postgres_promos
+    description: "Promotions and their discount amounts"
+
+  - name: stg_postgres_users
+    description: "Every user and their available/relevant information"
