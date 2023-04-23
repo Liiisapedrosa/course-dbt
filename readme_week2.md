@@ -18,21 +18,21 @@ from dev_db.dbt_elisapedrosareismolliecom.fact_user_orders
 - A good indicator can be their daily/weekly/monthly recurrance and that can be used to indicate when they will stop ordering as well. Indicators on an order level can be how long it took to deliver, which is possible to measure with the data available, or if there was any cancelation on the order, any issues with delivery or also if the order was returned after delivered, which are not possible to measure with the data points available.
 
 ## Model layers created:
-. marts
-    . product
-        . intermediate
-        - fact_page_views: all pageview events, as state in the project instructions, so you can answer the question of daily pageviews per product and study traffic
-    . marketing
-        . intermediate
-            - int_session_agg: table aggregating sessions and compiling the events inside each session to end up with one row per session
-        - fact_session_users: table that uses the int_session_agg to build a view of each session combined with user info
-        - fact_user_orders: table with each user and all their orders, so can be used to answer questions such as what is the repeat rate and also if the user is using promos, how much money they have spent with Greenery, when was their last order and where is their address (state, country) which can be helpful for marketing analysis
-    . core: 
-        . intermediate:
-            - int_products_orders_agg: aggregation on a product level of all the orders created with the product and when was the first and last time the product was in an order
-        - dim_products: combination of page views and order info on a product level so you can know how many times a product was viewed, purchased and calculate if a product is getting traffic but not converting to order
-        - dim_users: table with all users and their addresses
-        - fact_orders: all orders with their promos details, how many products was there in the order and how many different types of products
+*  marts
+    * product
+        * intermediate
+        * fact_page_views: all pageview events, as state in the project instructions, so you can answer the question of daily pageviews per product and study traffic
+    * marketing
+        * intermediate
+            * int_session_agg: table aggregating sessions and compiling the events inside each session to end up with one row per session
+        * fact_session_users: table that uses the int_session_agg to build a view of each session combined with user info
+        * fact_user_orders: table with each user and all their orders, so can be used to answer questions such as what is the repeat rate and also if the user is using promos, how much money they have spent with Greenery, when was their last order and where is their address (state, country) which can be helpful for marketing analysis
+    * core: 
+        * intermediate:
+            * int_products_orders_agg: aggregation on a product level of all the orders created with the product and when was the first and last time the product was in an order
+        * dim_products: combination of page views and order info on a product level so you can know how many times a product was viewed, purchased and calculate if a product is getting traffic but not converting to order
+        * dim_users: table with all users and their addresses
+        * fact_orders: all orders with their promos details, how many products was there in the order and how many different types of products
 
 [Link to the DAG model layers](https://github.com/Liiisapedrosa/course-dbt/blob/main/Screenshot%202023-04-23%20at%2016.22.42.png)
 
