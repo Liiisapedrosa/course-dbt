@@ -1,0 +1,21 @@
+version: 2
+
+models:
+
+  - name: fact_sessions_users
+    description: "Aggregation on session level of session and user info"  
+    columns:
+    - name: session_id
+      tests:
+      - unique
+      - not_null
+
+  - name: fact_user_orders
+    description: "Aggregation on user level of all their orders"
+    columns:
+    - name: user_id
+      tests:
+      - unique
+      - not_null
+
+
