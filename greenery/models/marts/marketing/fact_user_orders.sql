@@ -30,9 +30,9 @@ select
     , sum(order_total) as total_cost
     , sum(promo_discount) as total_promo_dicounts
     , sum(case when promo_id is not null then 1 else 0 end) as promos_used
-    , sum(case when status = 'shipped' then 1 else 0 end) as shipped_orders
-    , sum(case when status = 'delivered' then 1 else 0 end) as delivered_orders
-    , sum(case when status = 'preparing' then 1 else 0 end) as preparing_orders
+    , sum(case when order_status = 'shipped' then 1 else 0 end) as shipped_orders
+    , sum(case when order_status = 'delivered' then 1 else 0 end) as delivered_orders
+    , sum(case when order_status = 'preparing' then 1 else 0 end) as preparing_orders
     , sum(total_products) as total_products
 from users
 left join orders
