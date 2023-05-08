@@ -1,0 +1,11 @@
+exposures:  
+  - name: Product Funnel View
+    description: >
+      Model that builds the product dashboard, starting with checkout funnel
+    type: dashboard
+    maturity: high
+    owner:
+      name: Elisa Reis
+      email: elisa@greenery.com
+    depends_on:
+      - ref('checkout_funnel')

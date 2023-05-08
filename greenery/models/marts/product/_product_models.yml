@@ -9,3 +9,6 @@ models:
       tests:
       - unique
       - not_null
+  
+  - name: checkout_funnel
+    description: "Checkout funnel per day"
